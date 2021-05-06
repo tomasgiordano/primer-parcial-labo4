@@ -1,0 +1,9 @@
+img {
+    width: 50px;
+}
+
+.content {
+    width: 30em;
+    overflow: scroll;
+    height: 320px;
+}

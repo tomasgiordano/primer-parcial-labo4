@@ -1,0 +1,16 @@
+<div class="container" *ngFor="let item of pelicula">
+    <div class="row" style="padding: 0.5em;">
+        <div class="col-1">
+            {{item.id}}
+        </div>
+        <div class="col-4">
+            {{item.nombre}}
+        </div>
+        <div [class]="flag?'col-3':'col-6'">
+            {{item.fecha}}
+        </div>
+        <div class="col-3-sm" *ngIf="flag">
+            <button type="button" class="btn btn-primary" (click)="seleccion(item.id)">Detalle</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "utn-parcial": {
+      "hosting": {
+        "pruebaPacial": [
+          "utn-parcial"
+        ]
+      }
+    }
+  }
+}

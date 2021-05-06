@@ -1,0 +1,18 @@
+<div [class]="flag?'':'content'">
+    <div class="container" *ngFor="let item of actores">
+        <div class="row" style="padding: 0.5em;">
+            <div class="col-3">
+                {{item.nombre}}
+            </div>
+            <div class="col-3">
+                {{item.apellido}}
+            </div>
+            <div class="col-3">
+                {{item.pais}}
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-primary" (click)="seleccion(item.correo,item.pais)">{{flag?"Detalle":"Agregar"}}</button>
+            </div>
+        </div>
+    </div>
+</div>

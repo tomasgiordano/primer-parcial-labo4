@@ -1,0 +1,15 @@
+<div class="content">
+    <div class="container"  *ngFor="let item of pais">
+        <div class="row" style="padding: 0.5em;" (click)="seleccion(item.name)">
+            <div class="col">
+                <img [src]="item.flag">
+            </div>
+            <div class="col">
+                <h5>{{item.name}}</h5>
+
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
+

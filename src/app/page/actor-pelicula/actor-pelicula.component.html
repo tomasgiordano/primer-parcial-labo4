@@ -1,0 +1,23 @@
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-3">Listado de Actores</h1>
+        <app-tabla-actor flag="true" [actores]="actores" (select)="seleccion($event)"></app-tabla-actor>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Peliculas del actor</h2>
+            <app-tabla-pelicula [pelicula]="peliculas"></app-tabla-pelicula>
+        </div>
+        <div class="col-md-4">
+            <h2>Pais del actor</h2>
+            <app-detalle-pais [pais]="pais"></app-detalle-pais>
+        </div>
+        <div class="col-md-4">
+            <h2>Detalle del actor</h2>
+            <app-detalle-actor [actor]="actor"></app-detalle-actor>
+        </div>
+    </div>

@@ -1,0 +1,11 @@
+img {
+    width: 50px;
+}
+
+
+.content{
+    width:300px;
+    overflow:scroll;
+    height: 320px;
+}
+

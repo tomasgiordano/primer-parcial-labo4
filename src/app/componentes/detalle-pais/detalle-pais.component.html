@@ -1,0 +1,7 @@
+<div class="container" *ngIf="pais != null">
+    <img [src]="pais.flag" [alt]="pais.name">
+    <h5>Nombre: {{pais.name}}</h5>
+    <h5>Region: {{pais.region}}</h5>
+    <h5>Capital: {{pais.capital}}</h5>
+    <h5>Poblacion: {{pais.population}}</h5>
+</div>

@@ -1,0 +1,9 @@
+<div class="container" *ngIf="pelicula != null">
+    <img [src]="pelicula.imagen" [alt]="pelicula.nombre">
+    <h5>id: {{pelicula.id}}</h5>
+    <h5>Nombre: {{pelicula.nombre}}</h5>
+    <h5>Tipo: {{pelicula.fecha}}</h5>
+    <h5>Fecha de estreno: {{pelicula.fechaEstreno}}</h5>
+    <h5>Cantidad de publico: {{pelicula.publico}}</h5>
+    <h5>{{pelicula.descripcion}}</h5>
+</div>
