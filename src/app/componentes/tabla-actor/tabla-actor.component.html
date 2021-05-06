@@ -5,13 +5,13 @@
                 {{item.nombre}}
             </div>
             <div class="col-3">
-                {{item.apellido}}
+                {{item.dni}}
             </div>
             <div class="col-3">
                 {{item.pais}}
             </div>
             <div class="col-3">
-                <button type="button" class="btn btn-primary" (click)="seleccion(item.correo,item.pais)">{{flag?"Detalle":"Agregar"}}</button>
+                <button type="button" class="btn btn-primary" (click)="seleccion(item.dni,item.pais)">{{flag?"Detalle":"Agregar"}}</button>
             </div>
         </div>
     </div>

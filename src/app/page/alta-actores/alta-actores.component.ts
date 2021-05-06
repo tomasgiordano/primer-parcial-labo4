@@ -38,9 +38,6 @@ export class AltaActoresComponent implements OnInit {
       try {
         const list : Array<Repartidor> = await this.storage.getList<Repartidor>("Repartidores");
         console.log(list);
-        // list.forEach((l: Repartidor)=>{
-        //   if(l.dni === this.forma.get('dni').value)throw "Este dni ya esta tomado...";
-        // });
         await this.storage.setDoc("Repartidores",this.forma.value);
         this.forma.reset();
         window.alert("Encuesta enviada correctamente, gracias por participar!");

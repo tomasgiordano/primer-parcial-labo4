@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Actor } from '../../class/actor';
+import { Repartidor } from '../../class/repartidor';
 
 @Component({
   selector: 'app-tabla-actor',
@@ -8,7 +8,7 @@ import { Actor } from '../../class/actor';
 })
 export class TablaActorComponent implements OnInit {
 
-  @Input() actores: Array<Actor>;
+  @Input() actores: Array<Repartidor>;
   @Input() flag: boolean = false;
   @Output() select = new EventEmitter<any>();
 
@@ -19,7 +19,6 @@ export class TablaActorComponent implements OnInit {
 
   seleccion(id: number,pais: string){
     this.flag?this.select.emit({id,pais}):this.select.emit(id);
-
   }
 
 }
