@@ -25,10 +25,10 @@ export class LoginComponent implements OnInit {
     private fb : FormBuilder) { }
   ngOnInit(): void {
     this.formLogin = this.fb.group({
-      correo : ['',[
+      correo : ['tomasgiordano@gmail.com',[
         Validators.required,
       ]],
-      clave : ['',[
+      clave : ['123456',[
         Validators.required,
       ]]
     })
