@@ -5,33 +5,55 @@ import { BusquedaspeliculasComponent } from './page/busquedaspeliculas/busquedas
 import { AltaActoresComponent } from './page/alta-actores/alta-actores.component';
 import { PeliculaAltaComponent } from './page/pelicula-alta/pelicula-alta.component';
 import { ActorPeliculaComponent } from './page/actor-pelicula/actor-pelicula.component';
+import { LoginComponent } from './componentes/login/login.component';
+import { RegistroComponent } from './componentes/registro/registro.component';
+import { InicioComponent } from './page/inicio/inicio.component';
 
 const routes: Routes = [
   {
-    path: 'bienvenido',
-    component: BienvenidosComponent,
+    path: "",
+    redirectTo: "/login",
+    pathMatch: "full"
   },
   {
-    path: 'busqueda',
-    component: BusquedaspeliculasComponent
+    component: LoginComponent,
+    path:"login"
   },
   {
-    path: 'AltaActores',
-    component: AltaActoresComponent
+    component: RegistroComponent,
+    path: "registro"
   },
   {
-    path:'PeliculaAlta',
-    component:PeliculaAltaComponent
+    component: InicioComponent,
+    path: "",
+    children:[
+      {
+        path: 'bienvenido',
+        component: BienvenidosComponent,
+      },
+      {
+        path: 'busqueda',
+        component: BusquedaspeliculasComponent
+      },
+      {
+        path: 'AltaActores',
+        component: AltaActoresComponent
+      },
+      {
+        path:'PeliculaAlta',
+        component:PeliculaAltaComponent
+      },
+      {
+        path:'ActorPelicula',
+        component:ActorPeliculaComponent
+      },
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'bienvenido'
+      }
+    ]
   },
-  {
-    path:'ActorPelicula',
-    component:ActorPeliculaComponent
-  },
-  {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'bienvenido'
-  }
 ];
 
 @NgModule({
