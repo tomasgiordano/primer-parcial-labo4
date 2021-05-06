@@ -11,11 +11,6 @@ import { InicioComponent } from './page/inicio/inicio.component';
 
 const routes: Routes = [
   {
-    path: "",
-    redirectTo: "/login",
-    pathMatch: "full"
-  },
-  {
     component: LoginComponent,
     path:"login"
   },

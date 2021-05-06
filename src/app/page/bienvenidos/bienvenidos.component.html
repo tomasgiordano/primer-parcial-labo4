@@ -1,12 +1,13 @@
 <main role="main">
-
-    <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
         <div class="container">
             <h1 class="display-3" style="margin-top: 100px;">Bienvenido!</h1>
         </div>
+        <div class="text-center">
+            <p class="display-3" style="">{{data.name}}</p>
+            <img class="display-3" style="border: black 10px solid; width: 200px; height: auto;" src={{data.avatar_url}}>
+            <p class="display-4" style="">Seguidores: {{data.followers}}</p>
+            <p class="display-4" >Siguiendo: {{data.following}}</p>
+        </div>
     </div>
-
-    <!-- /container -->
-
 </main>

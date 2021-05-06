@@ -20,12 +20,10 @@ export class LoginComponent implements OnInit {
   formLogin : FormGroup;
 
   constructor(
-    @Inject(DOCUMENT) private _document,
     public loginService : LoginService,
     public router : Router,
     private fb : FormBuilder) { }
   ngOnInit(): void {
-    this._document.body.classList.add('bodybg-color');
     this.formLogin = this.fb.group({
       correo : ['',[
         Validators.required,
@@ -45,7 +43,7 @@ export class LoginComponent implements OnInit {
       this.loginService.SignIn(correo,clave)
       .then(()=>{
         this.loginService.SetSesionActual(correo);
-        this.router.navigate(['/home']);
+        this.router.navigate(['']);
       }).catch(aux=>{
         this.error ='No existe usuario';
       })
@@ -65,7 +63,7 @@ export class LoginComponent implements OnInit {
       this.loginService.SignIn(correo,clave)
       .then(()=>{
         this.loginService.SetSesionActual(correo);
-        this.router.navigate(['/home']);
+        this.router.navigate(['']);
       }).catch(aux=>{
         this.error ='No existe usuario';
       })

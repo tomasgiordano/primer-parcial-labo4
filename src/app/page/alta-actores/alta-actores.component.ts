@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { validateEventsArray } from '@angular/fire/firestore';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { StoreService } from 'src/app/services/store.service';
-import { Actor } from '../../class/actor';
+import { Repartidor } from '../../class/repartidor';
 
 @Component({
   selector: 'app-alta-actores',
@@ -17,11 +17,12 @@ export class AltaActoresComponent implements OnInit {
 
   ngOnInit(): void {
     this.forma = this.fb.group({
+      'dni':['',Validators.required],
       'nombre':['',Validators.required],
-      'apellido':['',Validators.required],
-      'edad': ['',[Validators.required,Validators.min(18),Validators.max(99)]],
-      'correo':['',[Validators.required,Validators.email]],
+      'edad':['',Validators.required],
+      'capacidad': ['',[Validators.required]],
       'pais':['',Validators.required],
+      'unidadPropia':['',[Validators.required]],
   })
 }
 
@@ -35,12 +36,12 @@ export class AltaActoresComponent implements OnInit {
     if(this.forma.valid)
     {
       try {
-        const list : Array<Actor> = await this.storage.getList<Actor>("Actores");
+        const list : Array<Repartidor> = await this.storage.getList<Repartidor>("Repartidores");
         console.log(list);
-        list.forEach((l: Actor)=>{
-          if(l.correo === this.forma.get('correo').value)throw "Este email ya esta tomado...";
-        });
-        await this.storage.setDoc("Actores",this.forma.value);
+        // list.forEach((l: Repartidor)=>{
+        //   if(l.dni === this.forma.get('dni').value)throw "Este dni ya esta tomado...";
+        // });
+        await this.storage.setDoc("Repartidores",this.forma.value);
         this.forma.reset();
         window.alert("Encuesta enviada correctamente, gracias por participar!");
       } catch (error) {
