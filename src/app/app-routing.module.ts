@@ -8,6 +8,8 @@ import { ActorPeliculaComponent } from './page/actor-pelicula/actor-pelicula.com
 import { LoginComponent } from './componentes/login/login.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { InicioComponent } from './page/inicio/inicio.component';
+import { SesionGuard } from './guards/sesion.guard';
+import { AbmPizzaComponent } from './componentes/abm-pizza/abm-pizza.component';
 
 const routes: Routes = [
   {
@@ -21,6 +23,9 @@ const routes: Routes = [
   {
     component: InicioComponent,
     path: "",
+    canActivate:[
+      SesionGuard
+    ],
     children:[
       {
         path: 'bienvenido',
@@ -41,6 +46,10 @@ const routes: Routes = [
       {
         path:'ActorPelicula',
         component:ActorPeliculaComponent
+      },
+      {
+        path:'AbmPizza',
+        component:AbmPizzaComponent
       },
       {
         path: '',

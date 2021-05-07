@@ -3,10 +3,14 @@
         <img class="mb-4" src="../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" value="tomasgiordano@gmail.com" formControlName="correo" required autofocus>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" formControlName="correo" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" value="123456" formControlName="clave" required>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" formControlName="clave" required>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <div class="row">
+          <button class="btn btn-primary col-6" (click)="Hardcodear('admin@admin.com','123456')">Admin</button>
+          <button class="btn btn-primary col-6" (click)="Hardcodear('empleado@empleado.com','123456')">Empleado</button>
+        </div>
         <p class="mt-5 mb-3 text-muted">&copy; 2017-2021</p>
       </form>
     

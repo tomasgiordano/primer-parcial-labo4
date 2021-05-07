@@ -20,6 +20,7 @@ import { DetalleActorComponent } from './componentes/detalle-actor/detalle-actor
 import { LoginComponent } from './componentes/login/login.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { InicioComponent } from './page/inicio/inicio.component';
+import { AbmPizzaComponent } from './componentes/abm-pizza/abm-pizza.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { InicioComponent } from './page/inicio/inicio.component';
     DetalleActorComponent,
     LoginComponent,
     RegistroComponent,
-    InicioComponent
+    InicioComponent,
+    AbmPizzaComponent
   ],
   imports: [
     BrowserModule,

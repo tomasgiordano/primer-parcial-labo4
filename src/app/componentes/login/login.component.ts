@@ -25,10 +25,10 @@ export class LoginComponent implements OnInit {
     private fb : FormBuilder) { }
   ngOnInit(): void {
     this.formLogin = this.fb.group({
-      correo : ['tomasgiordano@gmail.com',[
+      correo : ['',[
         Validators.required,
       ]],
-      clave : ['123456',[
+      clave : ['',[
         Validators.required,
       ]]
     })
@@ -68,5 +68,11 @@ export class LoginComponent implements OnInit {
         this.error ='No existe usuario';
       })
     
+  }
+
+  Hardcodear(correo:string,password:string)
+  {
+    this.formLogin.get('correo').setValue(correo);
+    this.formLogin.get('clave').setValue(password);
   }
 }
